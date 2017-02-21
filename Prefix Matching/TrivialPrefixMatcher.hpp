@@ -26,9 +26,7 @@ public:
     return false;
   }
   
-  void wrapUp() {
-    
-  }
+  void wrapUp() { }
 };
 
 #endif /* TrivialPrefixMatcher_hpp */
