@@ -18,11 +18,16 @@ class TrivialPrefixMatcher: public PrefixMatcher {
 public:
   bool match(std::string string) {
     for (std::string prefix: prefixes) {    
-      if (string.find(prefix) == 0) {
+      if (string.find(prefix) != std::string::npos) {
+        cout << "Found match :" << prefix << " contained in " << string << endl;
         return true;
       }
     }
     return false;
+  }
+  
+  void wrapUp() {
+    
   }
 };
 

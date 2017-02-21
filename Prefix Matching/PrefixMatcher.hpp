@@ -19,6 +19,7 @@ class PrefixMatcher {
   
 public:
   virtual bool match(std::string string) = 0;
+  virtual void wrapUp() = 0;
   
   void addPrefix(std::string prefix) {
     prefixes.push_back(prefix);
