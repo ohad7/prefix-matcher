@@ -21,12 +21,12 @@ public:
   virtual bool match(std::string string) = 0;
   virtual void wrapUp() = 0;
   
-  void addPrefix(std::string prefix) {
-    prefixes.push_back(prefix);
+  void addKeyword(std::string keyword) {
+    keywords.push_back(keyword);
   }
   
 protected:
-  std::vector<std::string> prefixes;
+  std::vector<std::string> keywords;
 
 };
 

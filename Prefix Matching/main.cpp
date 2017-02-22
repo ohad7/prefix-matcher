@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     line.erase(remove(line.begin(), line.end(), ' '), line.end());
     std::transform(line.begin(), line.end(), line.begin(), ::tolower);
     cout << "Adding keyword: " << line << endl;
-    trivialMatcher.addPrefix(line);
+    trivialMatcher.addKeyword(line);
   }
   
   trivialMatcher.wrapUp();
@@ -38,5 +38,12 @@ int main(int argc, const char * argv[]) {
   assert(matched1);
   assert(matched2);
   assert(!matched3);
+  
+  while (std::getline(urls, line)) {
+    line.erase(remove(line.begin(), line.end(), ' '), line.end());
+    std::transform(line.begin(), line.end(), line.begin(), ::tolower);
+    trivialMatcher.match(line);
+  }
+  
   return 0;
 }

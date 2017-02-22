@@ -17,9 +17,9 @@ using namespace std;
 class TrivialPrefixMatcher: public PrefixMatcher {
 public:
   bool match(std::string string) {
-    for (std::string prefix: prefixes) {    
-      if (string.find(prefix) != std::string::npos) {
-        cout << "Found match :" << prefix << " contained in " << string << endl;
+    for (std::string keyword: keywords) {
+      if (string.find(keyword) != std::string::npos) {
+        cout << "Found match :" << keyword << " contained in " << string << endl;
         return true;
       }
     }
